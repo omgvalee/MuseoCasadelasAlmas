@@ -252,25 +252,25 @@
                 z-index: 3;
         }
 
-        /* Zoom extra SOLO para la imagen horizontal en móvil */
-@media (max-width: 768px) {
-    .owner-bg-zoom.extra-horizontal {
-        transform: scale(1.35);
-    }
-
-    .owner-section-bg.zoom .owner-bg-zoom.extra-horizontal {
-        animation: zoomHorizontalMobile 20s ease-out forwards;
-    }
-
-    @keyframes zoomHorizontalMobile {
-        from {
-            transform: scale(1.45);
-        }
-        to {
+        /* Zoom extra SOLO para la imagen 1 */
+        @media (max-width: 768px) {
+        .owner-bg-zoom.extra-horizontal {
             transform: scale(1.35);
         }
-    }
-}
+
+        .owner-section-bg.zoom .owner-bg-zoom.extra-horizontal {
+            animation: zoomHorizontalMobile 20s ease-out forwards;
+        }
+
+        @keyframes zoomHorizontalMobile {
+            from {
+                transform: scale(1.45);
+                }
+                to {
+                    transform: scale(1.35);
+                }
+            }
+        }
 
 
         
@@ -299,7 +299,7 @@
                         <a class="nav-link" href="#about">Sobre la artista</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#location">Sobre el museo</a>
+                        <a class="nav-link" href="#museum">Sobre el museo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#location">Ubicación</a>
@@ -506,7 +506,6 @@
             "images/owner-bg2.jpg",
             "images/owner-bg3.jpg",
             "images/owner-bg4.jpg",
-            "images/owner-bg6.jpg",
             "images/owner-bg1.jpg"
         ];
         let currentIndex = 0;
@@ -514,21 +513,21 @@
             const ownerBg = ownerSection.querySelector(".owner-bg-zoom");
 
         function changeOwnerBackground() {
-    ownerSection.classList.remove("zoom");
-    ownerBg.classList.remove("extra-horizontal");
-    void ownerSection.offsetWidth;
+            ownerSection.classList.remove("zoom");
+            ownerBg.classList.remove("extra-horizontal");
+            void ownerSection.offsetWidth;
 
-    const currentImage = ownerBackgrounds[currentIndex];
-    ownerBg.style.backgroundImage = `url('${currentImage}')`;
+        const currentImage = ownerBackgrounds[currentIndex];
+            ownerBg.style.backgroundImage = `url('${currentImage}')`;
 
-    // Si es la imagen horizontal
-    if (currentImage.includes("owner-bg1.jpg")) {
+    
+        if (currentImage.includes("owner-bg1.jpg")) {
         ownerBg.classList.add("extra-horizontal");
-    }
+        }
 
-    ownerSection.classList.add("zoom");
-    currentIndex = (currentIndex + 1) % ownerBackgrounds.length;
-}
+            ownerSection.classList.add("zoom");
+            currentIndex = (currentIndex + 1) % ownerBackgrounds.length;
+        }
 
 
         changeOwnerBackground();
