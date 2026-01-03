@@ -193,22 +193,32 @@
 
         .owner-section-bg {
             position: relative;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            overflow: hidden;
             min-height: 80vh;
-    
         }
 
-        .owner-section-bg.zoom {
-            animation: zoomEffect 20s linear forwards;
+        .owner-bg-zoom {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+            transform: scale(1.1);
+            z-index: 0;
+        }
+
+        .owner-section-bg.zoom .owner-bg-zoom {
+            animation: zoomEffect 20s ease-out forwards;
         }
 
         @keyframes zoomEffect {
-            from { background-size: 110%; }
-            to   { background-size: 100%; }
+            from {
+                transform: scale(1.1);
+            }
+            to {
+                transform: scale(1);
+            }
         }
-
 
         
         .owner-section-bg::before {
@@ -241,6 +251,29 @@
                 position: relative;
                 z-index: 3;
         }
+
+        /* Zoom extra SOLO para la imagen horizontal en móvil */
+@media (max-width: 768px) {
+    .owner-bg-zoom.extra-horizontal {
+        transform: scale(1.35);
+    }
+
+    .owner-section-bg.zoom .owner-bg-zoom.extra-horizontal {
+        animation: zoomHorizontalMobile 20s ease-out forwards;
+    }
+
+    @keyframes zoomHorizontalMobile {
+        from {
+            transform: scale(1.45);
+        }
+        to {
+            transform: scale(1.35);
+        }
+    }
+}
+
+
+        
 
     </style>
 </head>
@@ -333,6 +366,9 @@
 
     <!-- About the Owner Section -->
     <section class="py-5 section-dark owner-section-bg" id="about">
+        <div class="owner-bg-zoom"></div>
+
+        <div class="container py-5">
         <div class="container py-5">
             <h2 class="section-title text-white">Sobre la artista</h2>
             <div class="row align-items-center">
@@ -466,36 +502,39 @@
         });
     </script>
     <script>
-    const ownerBackgrounds = [
-        "images/owner-bg2.jpg",
-        "images/owner-bg3.jpg",
-        "images/owner-bg4.jpg",
-        "images/owner-bg1.jpg"
-    ];
+        const ownerBackgrounds = [
+            "images/owner-bg2.jpg",
+            "images/owner-bg3.jpg",
+            "images/owner-bg4.jpg",
+            "images/owner-bg6.jpg",
+            "images/owner-bg1.jpg"
+        ];
+        let currentIndex = 0;
+            const ownerSection = document.querySelector(".owner-section-bg");
+            const ownerBg = ownerSection.querySelector(".owner-bg-zoom");
 
-    let currentIndex = 0;
-    const ownerSection = document.querySelector(".owner-section-bg");
+        function changeOwnerBackground() {
+    ownerSection.classList.remove("zoom");
+    ownerBg.classList.remove("extra-horizontal");
+    void ownerSection.offsetWidth;
 
-    function changeOwnerBackground() {
-        // Quitar animación
-        ownerSection.classList.remove("zoom");
+    const currentImage = ownerBackgrounds[currentIndex];
+    ownerBg.style.backgroundImage = `url('${currentImage}')`;
 
-        // Forzar reflow para reiniciar la animación
-        void ownerSection.offsetWidth;
-
-        // Cambiar imagen
-        ownerSection.style.backgroundImage =
-            `url('${ownerBackgrounds[currentIndex]}')`;
-
-        // Volver a activar animación
-        ownerSection.classList.add("zoom");
-
-        currentIndex = (currentIndex + 1) % ownerBackgrounds.length;
+    // Si es la imagen horizontal
+    if (currentImage.includes("owner-bg1.jpg")) {
+        ownerBg.classList.add("extra-horizontal");
     }
 
-    changeOwnerBackground();
-    setInterval(changeOwnerBackground, 8000);
-</script>
+    ownerSection.classList.add("zoom");
+    currentIndex = (currentIndex + 1) % ownerBackgrounds.length;
+}
+
+
+        changeOwnerBackground();
+        setInterval(changeOwnerBackground, 8000);
+    </script>
+
 
 
 </body>
