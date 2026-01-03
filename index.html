@@ -282,8 +282,15 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="bi bi-palette d-none d-md-inline"></i> Museo <span>Casa de las Almas</span>
+                <!-- Versión móvil -->
+                <span class="d-inline d-md-none">Casa de las Almas</span>
+
+                <!-- Versión desktop -->
+                <p class="d-none d-md-inline">
+                    <i class="bi bi-palette"></i> Museo <span>Casa de las Almas</span>
+                </p>
             </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
