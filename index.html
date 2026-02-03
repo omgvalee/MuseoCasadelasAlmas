@@ -82,7 +82,7 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,1.0);
         }
         
-        /* Section Styles */
+
         .section-title {
             position: relative;
             margin-bottom: 3rem;
@@ -104,13 +104,13 @@
             color: var(--color-white);
         }
         
-        /* Museum Themes */
+
         .theme-card {
             border: none;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             height: 100%;
-            color:white;
+            color: var(--color-white);
         }
         
         .theme-card:hover {
@@ -122,23 +122,20 @@
             height: 300px;
             width: 100%;
             object-fit: cover;
-
-            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 75%, transparent 100%);
+            mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 75%, transparent 100%);
 }
 
         
         .volcano-theme {
-            /* border-top-color: var(--color-volcano); */
-            background-color: #211d1d;
+            background-color: #000000;
         }
 
         .mamasdealma-theme {
-            /* border-top-color: var(--color-pink); */
-            background-color: #211d1d;
+            background-color: #000000;
         }
         
-        /* About Owner */
+
         .owner-img {
             border-radius: 50%;
             width: 200px;
@@ -147,14 +144,12 @@
             border: 5px solid var(--color-brown);
         }
         
-        /* Location Section */
         .location-info {
             background-color: rgba(139, 69, 19, 0.1);
             border-left: 4px solid var(--color-brown);
             padding: 20px;
         }
         
-        /* Footer */
         footer {
             background-color: var(--color-black);
             color: var(--color-white);
@@ -305,7 +300,6 @@
                 <!-- Versión móvil -->
                 <span class="d-inline d-md-none">Casa de las Almas</span>
 
-                <!-- Versión desktop -->
                 <p class="d-none d-md-inline">
                     <i class="bi bi-palette"></i> Museo <span>Casa de las Almas</span>
                 </p>
@@ -336,7 +330,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-section" id="home">
         <div class="container">
             <div class="row align-items-center">
@@ -350,25 +343,20 @@
         </div>
     </section>
 
-    <!-- Museum Themes/Wings Section -->
     <section class="py-5" id="themes">
         <div class="container py-5">
             <h2 class="section-title">Exposiciones</h2>
-            <p class="mb-5">Texto aqui.</p>
             
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card theme-card volcano-theme h-100">
                         <img class="card-img-top theme-card-img card-img-rotate-cruz">
                         <div class="card-body">
-                            <h3 class="card-title">Titulo.</h3>
-                            <p class="card-text">Descripción.</p>
-                            <ul>
-                                <li>Punto</li>
-                                <li>Punto</li>
-                                <li>Punto</li>
-                                <li>Punto</li>
-                            </ul>
+                            <h3 class="card-title">El Poder de la Cruz.</h3>
+                            <p class="card-text fst-italic">Una exploración simbólica y ancestral</p>
+                            <p class="card-text"> La artista aborda la cruz como un emblema universal,
+                                símbolo de fraternidad entre seres humanos, y punto de encuentro entre espíritu y materia.</p>
+                            <p class="card-text small opacity-75"> A través de referencias históricas y culturales alrededor del mundo, la cruz se presenta como símbolo cósmico y fisiológico.</p>
                         </div>
                     </div>
                 </div>
@@ -379,7 +367,7 @@
                     <div class="card-body">
                         <h3 class="card-title">Las Mamas de Alma</h3>
 
-                        <p class="card-text fst-italic text-brown-light">
+                        <p class="card-text fst-italic">
                             Una exposición íntima
                         </p>
 
@@ -400,7 +388,6 @@
         </div>
     </section>
 
-    <!-- About the Owner Section -->
     <section class="py-5 section-dark owner-section-bg" id="about">
         <div class="owner-bg-zoom"></div>
 
@@ -425,17 +412,16 @@
         </div>
     </section>
 
-    <!-- Location & Visit Section -->
     <section class="py-5" id="location">
         <div class="container py-5">
             <h2 class="section-title">Ubicación</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="location-info mb-4">
-                        <h4><i class="bi bi-geo-alt-fill text-brown"></i> Domicilio</h4>
-                        <p>Rio de San Antonio 47, La Becerrera, Comala<br>
-                        Colima, México. CP 28464</p>
+                        <h4><i class="bi bi-geo-alt-fill text-brown"></i> Ubicación</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.0611043342483!2d-103.71996352508656!3d19.452932140031812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842567dcaa6519c3%3A0xeacc59c0b9e65d82!2sMuseo%20Casa%20de%20las%20Almas!5e0!3m2!1ses!2smx!4v1770134044628!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                    
                     
                     <div class="location-info mb-4">
                         <h4><i class="bi bi-clock-fill text-brown"></i> Horario</h4>
@@ -474,7 +460,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-5">
         <div class="container">
             <div class="row">
@@ -515,10 +500,8 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Smooth scrolling script -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
