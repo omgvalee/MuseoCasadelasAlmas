@@ -253,7 +253,6 @@
                 z-index: 3;
         }
 
-        /* Zoom extra SOLO para la imagen 1 */
         @media (max-width: 768px) {
         .owner-bg-zoom.extra-horizontal {
             transform: scale(1.35);
@@ -292,23 +291,20 @@
         .btn-whatsapp {
             background-color: #25D366;
             color: rgb(0, 0, 0);
-            padding: 10px 15px;
+            padding: 10px 45px;
             border-radius: 5px;
             text-decoration: none;
             display: inline-block;
-            margin-top: 10px;
-            transition: background-color 0.3s;
+            margin-top: 20px;
         }
         
 
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <!-- Versión móvil -->
                 <span class="d-inline d-md-none">Casa de las Almas</span>
 
                 <p class="d-none d-md-inline">
@@ -447,15 +443,18 @@
                     <div class="location-info mb-4">
                         <h4><i class="bi bi-clock-fill text-brown"></i> Horario</h4>
                         <p>Sabados y Domingos: 10:00 AM - 6:00 PM<br>
+                        <a href="https://wa.me/523121434724" target="_blank" class="btn-whatsapp"><i class="bi bi-whatsapp"></i> Agenda por WhatsApp</a>
+                            
                     </div>
                     
                     <div class="location-info mb-4">
                         <h4><i class="bi bi-ticket-perforated-fill text-brown"></i> Entrada</h4>
                         <p>Adultos: $50 MXN<br>
                         Niños: $25 MXN</p>
-                        <a href="https://wa.me/523121434724" target="_blank" class="btn-whatsapp"><i class="bi bi-whatsapp"></i> Agenda por WhatsApp</a>
 
                     </div>
+
+                    
 
                 </div>
                 <div class="col-md-6">
@@ -480,22 +479,8 @@
 
     <footer class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h3 class="mb-3">Museo Casa de las Almas</h3>
-                    <p>Un espacio de arte y cultura independiente de la artista plastica Colimense fundadora Alma Gloria Araiza Valle.</p>
-                </div>
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h4 class="mb-3">Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#home" class="text-brown-light text-decoration-none">Inicio</a></li>
-                        <li><a href="#themes" class="text-brown-light text-decoration-none">Exposiciones</a></li>
-                        <li><a href="#about" class="text-brown-light text-decoration-none">Sobre la artista</a></li>
-                        <li><a href="#museum" class="text-brown-light text-decoration-none">Sobre el museo</a></li>
-                        <li><a href="#location" class="text-brown-light text-decoration-none">Ubicación</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
+            <div class="align-items-center text-center">
+                <div>
                     <h4 class="mb-3">Contactanos</h4>
                     <div class="mb-3">
                         <a href="https://www.facebook.com/MuseoCasadelasAlmas" class="footer-icon"><i class="bi bi-facebook"></i></a>
@@ -593,11 +578,6 @@
         document.querySelector(".card-img-rotate-mamas"),
         ["images/obra4.jpg", "images/obra10.jpg", "images/obra7.jpg", "images/obra8.jpg"]
     );
-
-
-
-
-
     </script>
 
 
